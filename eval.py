@@ -44,7 +44,7 @@ for seed in tqdm(range(args.num_models)):
     samples.append(syndata.df)
 
 counts = get_bincounts(samples, check_freq=args.eval_check_freq, fixed_score=args.eval_fixed_score)
-thresholds, num_candidates, num_matched = calculate_matches(counts, data.df, check_freq=args.eval_check_freq)
+thresholds, num_candidates, num_matched, num_uniq = calculate_matches(counts, data.df, check_freq=args.eval_check_freq)
 
 if args.ignore_block:
     args.dataset += '-ib'
@@ -54,6 +54,7 @@ df_results = pd.DataFrame(
      'data_dim': sum(data.domain.shape),
      'process_data': args.process_data,
      'N': len(data),
+     'N_uniq':num_uniq,
      'marginal': args.marginal,
      'subsample': subsample_queries,
      'num_queries': query_manager.num_queries,

@@ -65,8 +65,9 @@ def _calculate_matches_by_freq(counts, df_true):
             num_candidates[-1] += len(_candidate_samples)
             num_matched[-1] += len(_matched_samples)
     num_candidates, num_matched = np.array(num_candidates), np.array(num_matched)
+    num_uniq = len(true_samples)
 
-    return thresholds, num_candidates, num_matched
+    return thresholds, num_candidates, num_matched, num_uniq
 
 def _calculate_matches(counts, df_true):
     df_true = df_true.drop_duplicates().reset_index(drop=True)
@@ -80,8 +81,9 @@ def _calculate_matches(counts, df_true):
         num_candidates.append(len(candidate_samples))
         num_matched.append(len(matched_samples))
     num_candidates, num_matched = np.array(num_candidates), np.array(num_matched)
+    num_uniq = len(true_samples)
 
-    return thresholds, num_candidates, num_matched
+    return thresholds, num_candidates, num_matched, num_uniq
 
 def calculate_matches(counts, df_true, check_freq=False):
     if check_freq:
