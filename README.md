@@ -3,8 +3,8 @@
 We will setting up our codebase by first creating an Anaconda environment. 
 Please note that our codebase currently supports Python **3.7-3.8**.
 ````
-conda create -n watchdog-test python=3.8
-conda activate watchdog-test
+conda create -n raprank python=3.8
+conda activate raprank-test
 pip install --upgrade pip
 ````
 
