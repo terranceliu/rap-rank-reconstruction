@@ -1,3 +1,5 @@
+This repository contains code for reproducing results found in [Confidence-Ranked Reconstruction of Census Microdata from Published Statistics](https://arxiv.org/abs/2211.03128)
+
 # Setup
 
 We will setting up our codebase by first creating an Anaconda environment. 
