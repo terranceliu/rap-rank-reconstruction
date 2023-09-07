@@ -6,7 +6,7 @@ We will setting up our codebase by first creating an Anaconda environment.
 Please note that our codebase currently supports Python **3.7-3.8**.
 ````
 conda create -n raprank python=3.8
-conda activate raprank-test
+conda activate raprank
 pip install --upgrade pip
 ````
 
